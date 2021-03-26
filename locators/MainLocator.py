@@ -1,0 +1,24 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
+
+class MainLocator:
+    PROTOCOL = (By.NAME, "protocol")
+    NUMBER = (By.NAME, "number")
+    RESOLUTION = (By.NAME, "resolution")
+    SPEED = (By.NAME, "speed")
+    FPS = (By.NAME, "fps")
+    BUTTON_CALL = (By.CSS_SELECTOR, ".app__btn.btn.btn-success")
+    # сброс вызова
+    BUTTUN_CALL_RED = (By.CSS_SELECTOR, ".app__btn.app__btn_red.btn.btn-danger")
+    BUTTUN_CALL_RED_MODAL = (By.XPATH, "//button[@class='btn btn-danger']")
+    #локаторы для проверки выполнения вызова
+    INFORMATION_BUTTON = (By.XPATH, "//div[@class='participants__actions-left']/a[@class='btn btn-xs btn-default']")
+    NUMBER_PARTICIPANTS = (By.XPATH, "//div[@id='mainStats']/table[@class='table table-striped']/tbody/tr[2]/td[2]")
+    INFO_RESOLUTION = (By.XPATH, "//div[@id='mainStats']/table[@class='table table-striped']/tbody/tr[3]/td[2]")
+    INFO_SPEED = (By.XPATH, "//div[@id='mainStats']/table[@class='table table-striped']/tbody/tr[6]/td[2]")
+    INFO_FPS = (By.XPATH, "//div[@id='mainStats']/table[@class='table table-striped']/tbody/tr[7]/td[2]")
+    INFO_BUTTON_CLOSE = (By.XPATH, "//div[@class='modal-lg modal-dialog']/div[@class='modal-content']"
+                                   "/div[@class='modal-footer']/button[@class='btn btn-default']")
+
+
