@@ -41,7 +41,7 @@ class MainPage(BasePage):
                                                    f"получили: {rezolut} )"
         if speed != None:
             speed = int(speed)
-            assert spd <= speed, f"Битрейт превышает максимальное допустимое значение (выбирали: {speed}," \
+            assert spd <= speed+100, f"Битрейт превышает максимальное допустимое значение (выбирали: {speed}," \
                                  f" получили: {spd} )"
         if fps != None:
             fps = int(fps)
