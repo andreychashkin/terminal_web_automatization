@@ -13,14 +13,14 @@ def test_call_protocol(browser, protocol):
 @pytest.mark.parametrize('resolution', default_settings.resolution)
 def test_call_resolution_sip(browser, resolution, protocol='SIP'):
     obj = MainPage(browser)
-    obj.call(protocol, resolution=resolution, speed="10240", fps=rand(0, 6))
+    obj.call(protocol, resolution=resolution, speed="1536", fps=rand(0, 6))
     obj.call_rezult(protocol, resolution=resolution)
     return
 
 @pytest.mark.parametrize('resolution', default_settings.resolution)
 def test_call_resolution_h323(browser, resolution, protocol='H323'):
     obj = MainPage(browser)
-    obj.call(protocol, resolution=resolution, speed="10240", fps=rand(0, 6))
+    obj.call(protocol, resolution=resolution, speed="1536", fps=rand(0, 6))
     obj.call_rezult(protocol, resolution=resolution)
     return
 
