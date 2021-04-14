@@ -1,3 +1,4 @@
+terminal_ip = "10.1.0.129"
 test_number = "10.1.0.11"
 # параметры вызова
 protocol = ["H323", "SIP"]

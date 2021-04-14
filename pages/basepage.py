@@ -4,6 +4,7 @@ from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import  default_settings
 import time
 class BasePage:
     def __init__(self, driver):
@@ -32,3 +33,6 @@ class BasePage:
 
     def _text(self, locator, index=0):
         return self.__element(locator, index).text
+
+    def _open(self, url):
+        return self.driver.open("https://" + default_settings.terminal_ip + '/' + url)

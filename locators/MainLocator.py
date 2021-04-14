@@ -21,4 +21,17 @@ class MainLocator:
     INFO_BUTTON_CLOSE = (By.XPATH, "//div[@class='modal-lg modal-dialog']/div[@class='modal-content']"
                                    "/div[@class='modal-footer']/button[@class='btn btn-default']")
 
-
+class MenuLocator:
+    LOGO = (By.CSS_SELECTOR, "#logo")
+    TERMINAL = (By.CSS_SELECTOR, "#menu :nth-child(1)")
+    CONTACTS = (By.CSS_SELECTOR, "#menu :nth-child(2)")
+    LOGS = (By.CSS_SELECTOR, "#menu :nth-child(3)")
+    LOGS_LOGS = (By.CSS_SELECTOR, "#menu :nth-child(3) li:nth-child(1)")
+    LOGS_SISTEM = (By.CSS_SELECTOR, "#menu :nth-child(3) li:nth-child(2)")
+    LOGS_BAGS = (By.CSS_SELECTOR, "#menu :nth-child(3) li:nth-child(3)")
+    SISTEM = (By.CSS_SELECTOR, "#menu :nth-child(4)")
+    SISTEM_STATUS = (By.CSS_SELECTOR, "#menu :nth-child(4) li:nth-child(1)")
+    SISTEM_VIDEO = (By.CSS_SELECTOR, "#menu :nth-child(4) li:nth-child(2)")
+    SISTEM_SETTINGS = (By.CSS_SELECTOR, "#menu :nth-child(4) li:nth-child(3)")
+    SISTEM_LICENCE = (By.CSS_SELECTOR, "#menu :nth-child(4) li:nth-child(4)")
+    SISTEM_UPDATE = (By.CSS_SELECTOR, "#menu :nth-child(4) li:nth-child(5)")

@@ -2,11 +2,12 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import pytest
 import time
+import default_settings
 
 
 @pytest.fixture()
 def browser():
-    link = 'https://10.1.0.129'
+    link = 'https://' + default_settings.terminal_ip
     options = webdriver.ChromeOptions()
     options.add_argument('--ignore-certificate-errors')
     browser = webdriver.Chrome("./chromedriver", options=options)
