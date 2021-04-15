@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 import default_settings, time
 
 class MainPage(BasePage):
-
+    #вызов абонента
     def call(self, protokol, speed, fps, number=default_settings.test_number, resolution=2,):
         self._select(MainLocator.PROTOCOL, protokol)
         self._input(MainLocator.NUMBER, number)
@@ -15,7 +15,7 @@ class MainPage(BasePage):
         self._click(MainLocator.BUTTON_CALL)
         time.sleep(10)
         return
-
+    #проверка результата вызова
     def call_rezult(self, protocol, number=default_settings.test_number, resolution=None, speed=None, fps=None):
         self._click(MainLocator.INFORMATION_BUTTON)
         time.sleep(10)
@@ -47,7 +47,7 @@ class MainPage(BasePage):
             fps = int(fps)
             assert fps_rez <= fps, f"fps превышает максимальное допустимое значение (выбирали: {fps}," \
                                    f" получили: {fps_rez})"
-
+    #сброс вызова и установка стандартного значения
     def call_off(self):
         self._click(MainLocator.BUTTUN_CALL_RED)
         self._click(MainLocator.BUTTUN_CALL_RED_MODAL)
@@ -55,4 +55,30 @@ class MainPage(BasePage):
         self._select(MainLocator.RESOLUTION, 3)
         self._select(MainLocator.SPEED, 10)
         self._select(MainLocator.FPS, 5)
-        return
+        return True
+    # вызов ролика
+    def call_rolik(self):
+        self._click(MainLocator.ADD_ROLIK)
+        self._select(MainLocator.SELECT_ROLIK, 0)
+        self._click(MainLocator.AUTO_PLAY)
+        self._click(MainLocator.ADD_PLAYER_BUTTON)
+        self._click(MainLocator.PLAYERS)
+        self._click(MainLocator.CALL_PLAYER_BUTTON)
+        return True
+    # функция сверки текста локатора с эталоном
+    def or_text(self, locator, etalon):
+        if self._text(locator) == str(etalon):
+            return True
+        return False
+    # удаление добавленного плеера
+    def dell_player_main(self):
+        try:
+            self._click(MainLocator.ADD_ROLIK)
+            self._select(MainLocator.SELECT_ROLIK, 0)
+            self._click(MainLocator.AUTO_PLAY)
+            self._click(MainLocator.ADD_PLAYER_BUTTON)
+            self._click(MainLocator.PLAYERS)
+            self._click(MainLocator.DELL_ROLIC_BUTTON)
+            return True
+        except:
+            return False

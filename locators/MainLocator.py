@@ -1,6 +1,4 @@
-from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.select import Select
 
 class MainLocator:
     PROTOCOL = (By.NAME, "protocol")
@@ -20,6 +18,14 @@ class MainLocator:
     INFO_FPS = (By.XPATH, "//div[@id='mainStats']/table[@class='table table-striped']/tbody/tr[7]/td[2]")
     INFO_BUTTON_CLOSE = (By.XPATH, "//div[@class='modal-lg modal-dialog']/div[@class='modal-content']"
                                    "/div[@class='modal-footer']/button[@class='btn btn-default']")
+    # локаторы добавления ролика
+    ADD_ROLIK = (By.CSS_SELECTOR, ".glyphicon.glyphicon-film")
+    SELECT_ROLIK = (By.CSS_SELECTOR, 'select[name="player"]')
+    AUTO_PLAY = (By.CSS_SELECTOR, '.btn-slider.small.slider-green')
+    ADD_PLAYER_BUTTON = (By.CSS_SELECTOR, 'div#modal_players [type="submit"]')
+    PLAYERS = (By.CSS_SELECTOR, "ul.nav.nav-tabs li:nth-child(3)")
+    CALL_PLAYER_BUTTON = (By.CSS_SELECTOR, "a[data-name='LOCAL/player1']")
+    DELL_ROLIC_BUTTON = (By.CSS_SELECTOR, "a[data-name='player1']")
 
 class MenuLocator:
     LOGO = (By.CSS_SELECTOR, "#logo")
@@ -36,3 +42,8 @@ class MenuLocator:
     SISTEM_LICENCE = (By.CSS_SELECTOR, "#menu :nth-child(4) li:nth-child(4)")
     SISTEM_UPDATE = (By.CSS_SELECTOR, "#menu :nth-child(4) li:nth-child(5)")
 
+class StatusLocator:
+    POWER = (By.CSS_SELECTOR, "#cpu")
+    TEMPERATURE = (By.CSS_SELECTOR, "#temperature")
+    SIP_REGISTRATION_STATUS = (By.CSS_SELECTOR, "#sip")
+    H323_REGISTRATION_STATUS = (By.CSS_SELECTOR, "#h323")

@@ -1,10 +1,7 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
-from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import  default_settings
+import default_settings
 import time
 class BasePage:
     def __init__(self, driver):
@@ -16,6 +13,7 @@ class BasePage:
         return elements[index]
 
     def _click(self, locator, index=0):
+        time.sleep(1)
         return self.__element(locator, index).click()
 
     def _input(self, locator, lstr: str, index=0):
@@ -35,4 +33,4 @@ class BasePage:
         return self.__element(locator, index).text
 
     def _open(self, url):
-        return self.driver.open("https://" + default_settings.terminal_ip + '/' + url)
+        return self.driver.get("https://" + default_settings.terminal_ip + '/' + url)
