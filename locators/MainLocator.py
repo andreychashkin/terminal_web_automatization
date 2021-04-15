@@ -35,3 +35,4 @@ class MenuLocator:
     SISTEM_SETTINGS = (By.CSS_SELECTOR, "#menu :nth-child(4) li:nth-child(3)")
     SISTEM_LICENCE = (By.CSS_SELECTOR, "#menu :nth-child(4) li:nth-child(4)")
     SISTEM_UPDATE = (By.CSS_SELECTOR, "#menu :nth-child(4) li:nth-child(5)")
+
