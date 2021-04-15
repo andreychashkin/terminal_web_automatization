@@ -1,7 +1,6 @@
 import os
 
 terminal_ip = "10.1.0.129"
-test_number = "10.1.0.11"
 # параметры вызова
 protocol = ["H323", "SIP"]
 speed = ["10240", "8192", "6144", "5120", "4608", "4096", "3584", "3072",
@@ -12,5 +11,9 @@ resolution = ["4K 3840x2160", "FullHD 1920x1080", "HD 1280x720", "SVGA 800x600",
 fps = ["1", "5", "10", "15", "24", "30", "60"]
 
 # путь к файлу ролика
-
 video = os.path.abspath("videos/test_video.mp4")
+
+# данные для создания тестового контакта
+test_number = "10.1.0.11"
+test_name = 'test_contact'
+test_protocol = ['auto', 'H323', 'SIP', 'SIP_TCP', 'SIP_TLS', 'LOCAL']
