@@ -13,11 +13,13 @@ def player(browser):
     page._open("system/video")
     page.dell_all_video()
 
+# тест созадания контакта
 def test_call_player(player):
     obj = MainPage(player)
     obj.call_rolik()
-    assert obj.call_off(), "проблемы с вызовом ролика"
+    assert obj.call_off(), "Проблемы с вызовом ролика"
 
+# тест удаления плеера
 def test_dell_player(player):
     obj = MainPage(player)
     assert obj.dell_player_main() == True, "Не удалось удалить добавленный ролик"

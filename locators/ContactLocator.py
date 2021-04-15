@@ -16,3 +16,5 @@ class ContactLocator:
 
     DELL_CONTACT = (By.XPATH, "//tbody/tr[1]/td[8]/a[2]/span[@class='fa fa-trash fa-custom']")
     DELL_CONTACT_OK = (By.XPATH, "//button[@class='btn btn-warning load']")
+
+    ERROR_ADD_CONTACT = (By.CSS_SELECTOR, "#msg-add div")

@@ -4,6 +4,7 @@ import default_settings, time
 
 class ContactPage(BasePage):
 
+    # метод создания контакта для теста
     def add_contact(self, number=default_settings.test_number, protocol='SIP', name=default_settings.test_name):
         self._open('contacts')
         self._click(ContactLocator.ADD_CONTACT)
@@ -12,6 +13,7 @@ class ContactPage(BasePage):
         self._input(ContactLocator.NUMBER, number)
         self._click(ContactLocator.BUTTON_SUBMITE)
 
+    # проверка результата создания контакта
     def rezult(self, number=default_settings.test_number, protocol='SIP', name=default_settings.test_name):
         self._open('contacts')
         name_rezult = self._text(ContactLocator.NAME_CONTACT_REZULT)
@@ -20,6 +22,8 @@ class ContactPage(BasePage):
         if name_rezult == name and number_rezult == number and protocol_rezult == protocol:
             return True
         return False
+
+    # удаление контакта
     def dell_all_contacts(self):
         try:
             while True:
