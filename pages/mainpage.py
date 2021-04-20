@@ -1,7 +1,5 @@
 from pages import BasePage
 from locators.MainLocator import MainLocator
-from selenium.webdriver.support.select import Select
-from selenium.webdriver.common.by import By
 import default_settings, time
 
 class MainPage(BasePage):

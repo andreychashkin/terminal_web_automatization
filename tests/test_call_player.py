@@ -13,7 +13,7 @@ def player(browser):
     page._open("system/video")
     page.dell_all_video()
 
-# тест созадания контакта
+# тест загрузки ролика
 def test_call_player(player):
     obj = MainPage(player)
     obj.call_rolik()

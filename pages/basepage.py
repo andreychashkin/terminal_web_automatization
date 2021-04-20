@@ -34,3 +34,11 @@ class BasePage:
 
     def _open(self, url):
         return self.driver.get("https://" + default_settings.terminal_ip + '/' + url)
+
+    def _search_element(self, locator, time=15, index=0):
+        try:
+            elements = WebDriverWait(self.driver, time).until(EC.visibility_of_all_elements_located(locator),
+                                                        message="Элемент не найден")
+            return True
+        except:
+            return False
