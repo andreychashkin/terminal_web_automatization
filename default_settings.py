@@ -13,7 +13,7 @@ fps = ["1", "5", "10", "15", "24", "30", "60"]
 # путь к файлу ролика
 video = os.path.abspath("videos/test_video.mp4")
 picture = os.path.abspath("picture/test_picture.jpg")
-picture_err = [os.path.abspath("picture/err_picture.jpg"), ]
+picture_err = [os.path.abspath("picture/err_picture.jpg"), os.path.abspath("File/test_prez.pptx"), os.path.abspath("File/test_doc.docx")]
 
 # данные для создания тестового контакта
 test_number = "10.1.0.11"
