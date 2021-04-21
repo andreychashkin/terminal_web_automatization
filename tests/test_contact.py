@@ -10,6 +10,7 @@ def add_contacts(browser):
     page._open('contacts')
     page.dell_all_contacts()
 
+# тест создания контакта
 @pytest.mark.parametrize('protocol', default_settings.test_protocol)
 def test_add_contact(add_contacts, protocol):
     obj = ContactPage(add_contacts)
@@ -17,7 +18,7 @@ def test_add_contact(add_contacts, protocol):
     assert obj.rezult(protocol=protocol) == True, "Ошибка при проверке созданного контакта"
 
 # тест создание одинаковых контактов
-@pytest.mark.parametrize('protocol', ["SIP"])
+@pytest.mark.parametrize('protocol', default_settings.test_protocol)
 def test_add_duble(add_contacts, protocol):
     obj = ContactPage(add_contacts)
     obj.add_contact(protocol=protocol)
