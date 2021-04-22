@@ -1,6 +1,6 @@
 from pages.mainpage import MainPage
 from random import randint as rand
-import pytest, time, default_settings
+import pytest, default_settings
 
 
 @pytest.mark.parametrize('protocol', ["SIP", "H323"])

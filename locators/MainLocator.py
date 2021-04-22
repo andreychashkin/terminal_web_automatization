@@ -18,6 +18,7 @@ class MainLocator:
     INFO_FPS = (By.XPATH, "//div[@id='mainStats']/table[@class='table table-striped']/tbody/tr[7]/td[2]")
     INFO_BUTTON_CLOSE = (By.XPATH, "//div[@class='modal-lg modal-dialog']/div[@class='modal-content']"
                                    "/div[@class='modal-footer']/button[@class='btn btn-default']")
+    OFF_PROTOCOL_LABEL = (By.CSS_SELECTOR, ".modal-dialog .modal-body h4")
     # локаторы добавления ролика
     ADD_ROLIK = (By.CSS_SELECTOR, ".glyphicon.glyphicon-film")
     SELECT_ROLIK = (By.CSS_SELECTOR, 'select[name="player"]')

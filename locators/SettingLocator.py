@@ -3,6 +3,8 @@ from selenium.webdriver.common.by import By
 class SettingLocator:
     NDI = (By.LINK_TEXT, 'NDI')
     SCREENSAVE = (By.CSS_SELECTOR, ".nav.nav-tabs li:nth-child(12)")
+    TERMINAL = (By.CSS_SELECTOR, ".nav.nav-tabs li:nth-child(7)")
+    SAVE_LOCATOR_BUTTON = (By.CSS_SELECTOR, ".col-md-12 [name='submit']")
 
 class SettingLocatorNdi:
     NDI_SEARCH = (By.CSS_SELECTOR, "#ndiSearch")
@@ -22,3 +24,7 @@ class SettinglocatorScreenSave:
     IMAGE = (By.CSS_SELECTOR, "#saverImages li") # первый элемент картинка
     DELL_IMAGE = (By.CSS_SELECTOR, "#saverImages .glyphicon.glyphicon-trash") # кнопка удаления картинки
     ERR_DOWNLOAD = (By.CSS_SELECTOR, "#msg-saver-upload div") # сообщение ошибки загрузки некорректного изображения
+
+class SettingLocatorTerminal:
+    SIP = (By.XPATH, "//div[3]/div[10]/div[1]")
+    H323 = (By.XPATH, "//div[3]/div[11]/div[1]")

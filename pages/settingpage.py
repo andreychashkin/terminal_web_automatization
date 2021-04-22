@@ -1,5 +1,6 @@
 from pages.basepage import BasePage
-from locators.SettingLocator import SettingLocator, SettingLocatorNdi, SettinglocatorScreenSave
+from locators.SettingLocator import SettingLocator, SettingLocatorNdi, SettinglocatorScreenSave, SettingLocatorTerminal
+from locators.MainLocator import MainLocator
 import default_settings, time
 
 class SettingPage(BasePage):
@@ -68,3 +69,15 @@ class SettingPage(BasePage):
         if text == 'Неверный файл':
             return True
         return False
+
+    # метод выбора отключеного протокола и вызова по нему
+    def off_protocol(self, locator):
+        self._click(locator)
+        self._click(SettingLocator.SAVE_LOCATOR_BUTTON)
+        self._open('')
+
+        if locator == SettingLocatorTerminal.SIP:
+            locator = "SIP"
+        if locator == SettingLocatorTerminal.H323:
+            locator = "H323"
+        return locator
