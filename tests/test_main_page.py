@@ -24,12 +24,14 @@ def test_temperature_status(browser):
             return True
     assert text1 != text2, f"Проверить обновление температуры процессора (1: {text1}, 2: {text2})"
 
+
 # проверка отображения статуса регистрации
 def test_sip_status(browser):
     obj = MainPage(browser)
     assert obj.or_text(StatusLocator.SIP_REGISTRATION_STATUS, "Not registered"), "Проверить статус регистрации sip"
 
+
 # проверка отображения статуса регистрации
 def test_h323_status(browser):
     obj = MainPage(browser)
-    assert obj.or_text(StatusLocator.H323_REGISTRATION_STATUS, "Not registered"), "Проверить статус регистрации h323"
+    assert obj.or_text(StatusLocator.H323_REGISTRATION_STATUS, "Not registered"), 'Проверить статус регистрации h323'

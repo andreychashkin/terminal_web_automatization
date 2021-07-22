@@ -1,7 +1,7 @@
 from pages.videopage import VideoPage
 from pages.mainpage import MainPage
-from random import randint as rand
-import pytest, time, default_settings
+import pytest
+
 
 @pytest.fixture(scope='function')
 def player(browser):

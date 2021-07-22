@@ -9,6 +9,7 @@ resolution = ["4K 3840x2160", "FullHD 1920x1080", "HD 1280x720", "SVGA 800x600",
               "4SIF 704x480", "VGA 640x480", "w448p 768x448", "w288p 512x288", "CIF 352x288", "SIF 352x240",
               "QCIF 176x144", "QSIF 176x120"]
 fps = ["1", "5", "10", "15", "24", "30", "60"]
+number = ['1000@10.1.0.13', '10.1.0.13', 'demo.vinteo.com', 'krd.vinteo.com', '1000@demo.vinteo.com']
 
 # путь к файлу ролика
 video = os.path.abspath("videos/test_video.mp4")

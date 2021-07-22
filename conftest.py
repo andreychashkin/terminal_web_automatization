@@ -11,7 +11,7 @@ def browser():
     link = 'https://' + default_settings.terminal_ip
     options = webdriver.ChromeOptions()
     options.add_argument('--ignore-certificate-errors')
-    browser = webdriver.Chrome("./chromedriver.exe", options=options)
+    browser = webdriver.Chrome("./chromedriver", options=options)
     browser.get(link)
     time.sleep(1.5)
     lang = Select(browser.find_element(By.CSS_SELECTOR, '#language')).select_by_value('ru')

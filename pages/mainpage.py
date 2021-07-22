@@ -3,8 +3,9 @@ from locators.MainLocator import MainLocator
 import default_settings, time
 
 class MainPage(BasePage):
-    #вызов абонента
-    def call(self, protokol, speed, fps, number=default_settings.test_number, resolution=2,):
+
+    # вызов абонента
+    def call(self, protokol='H323', speed=10, fps=5, number=default_settings.test_number, resolution=2,):
         self._select(MainLocator.PROTOCOL, protokol)
         self._input(MainLocator.NUMBER, number)
         self._select(MainLocator.RESOLUTION, resolution)
@@ -13,7 +14,8 @@ class MainPage(BasePage):
         self._click(MainLocator.BUTTON_CALL)
         time.sleep(10)
         return
-    #проверка результата вызова
+
+    # проверка результата вызова
     def call_rezult(self, protocol, number=default_settings.test_number, resolution=None, speed=None, fps=None):
         self._click(MainLocator.INFORMATION_BUTTON)
         time.sleep(10)
@@ -34,7 +36,7 @@ class MainPage(BasePage):
         assert (protocol == prot) and (number == num), f"протокол и номер не соответствует вызванным (вызывали: {protocol} / {number}, " \
                                                        f"получили: {prot} / {num} )"
         if resolution != None:
-            #resolution = resolution.split(' ')[0]
+            # resolution = resolution.split(' ')[0]
             assert resolution.find(rezolut) != -1, f"Разрешение не соответствует выбранному(выбирали: {resolution}, " \
                                                    f"получили: {rezolut} )"
         if speed != None:
@@ -45,7 +47,8 @@ class MainPage(BasePage):
             fps = int(fps)
             assert fps_rez <= fps, f"fps превышает максимальное допустимое значение (выбирали: {fps}," \
                                    f" получили: {fps_rez})"
-    #сброс вызова и установка стандартного значения
+
+    # сброс вызова и установка стандартного значения
     def call_off(self):
         self._click(MainLocator.BUTTUN_CALL_RED)
         self._click(MainLocator.BUTTUN_CALL_RED_MODAL)
@@ -54,6 +57,7 @@ class MainPage(BasePage):
         self._select(MainLocator.SPEED, 10)
         self._select(MainLocator.FPS, 5)
         return True
+
     # вызов ролика
     def call_rolik(self):
         self._click(MainLocator.ADD_ROLIK)
@@ -63,11 +67,13 @@ class MainPage(BasePage):
         self._click(MainLocator.PLAYERS)
         self._click(MainLocator.CALL_PLAYER_BUTTON)
         return True
+
     # функция сверки текста локатора с эталоном
     def or_text(self, locator, etalon):
         if self._text(locator) == str(etalon):
             return True
         return False
+
     # удаление добавленного плеера
     def dell_player_main(self):
         try:
