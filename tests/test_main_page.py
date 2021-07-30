@@ -20,8 +20,6 @@ def test_temperature_status(browser):
     for i in range(3):
         time.sleep(3)
         text2 = obj._text(StatusLocator.TEMPERATURE)
-        if text1 != text2:
-            return True
     assert text1 != text2, f"Проверить обновление температуры процессора (1: {text1}, 2: {text2})"
 
 
